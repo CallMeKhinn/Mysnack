@@ -44,6 +44,16 @@ return [
             'transaction_mode' => 'DEFERRED',
         ],
 
+        'turso' => [
+            'driver' => 'turso',
+            'db_url' => env('DB_URL'),
+            'access_token' => env('DB_ACCESS_TOKEN'),
+            'db_replica' => env('DB_REPLICA'),
+            'prefix' => '',
+            'foreign_key_constraints' => true,
+            'sticky' => true,
+        ],
+
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DB_URL'),
