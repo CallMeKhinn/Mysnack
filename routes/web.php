@@ -23,3 +23,12 @@ Route::get('/jajan/edit/{id}', [JajanController::class, 'edit']);
 Route::post('/jajan/simpan/{id}', [JajanController::class, 'simpan']);
 
 Route::get('rekap', [JajanController::class, 'rekap']);
+
+Route::get('/test-db-connection', function () {
+    try {
+        DB::connection()->getPdo();
+        return "Connected successfully to database: " . DB::connection()->getDatabaseName();
+    } catch (Exception $e) {
+        die("Could not open connection to the database. Please check your configuration. Error: " . $e->getMessage());
+    }
+});
